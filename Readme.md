@@ -4,11 +4,11 @@ Currently lilybox supports there kinds of data type: `string`, `int` and `bytes`
 But everything is stored in RAM, next thing to do is adding adapter for FS/DBS and adding new query method such as http.
 # How to use
 ### Starting a Server
-``` shell
+```shell
 ./server.exe -port 12000 # run the server on port 12000
 ```
 ### Do Client RPC Call
-``` golang
+```golang
 type Storage struct {
 	pool map[string]interface{}
 }
