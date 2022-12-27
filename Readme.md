@@ -35,7 +35,7 @@ func (ac *Storage) GetBytes(key string) []byte {
 }
 
 func main() {
-    client := gorpc.NewTCPClient("127.0.0.1:6666")
+    client := gorpc.NewTCPClient("127.0.0.1:12000")
     dispatcher := gorpc.NewDispatcher()
 
     storage := new(Storage)
