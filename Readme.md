@@ -49,7 +49,7 @@ func main() {
     serviceClient.Call("AddString", [2]string{"string_text", func() string {
         var str string
         for i := 0; i < 128; i++ {
-            str += "haha"
+            str += "happy"
         }
         return str
     }()})
@@ -60,15 +60,15 @@ func main() {
     log.Println("GetString:", res)
 
     // Set int value
-    serviceClient.Call("AddInt", [2]string{"count", "1"})
-    res, err = serviceClient.Call("GetInt", "count")
+    serviceClient.Call("AddInt", [2]string{"num", "1"})
+    res, err = serviceClient.Call("GetInt", "num")
     if err != nil {
         panic(err)
     }
     log.Println("GetInt:", res)
 
-    // set value of []byte
-    serviceClient.Call("AddBytes", [2][]byte{[]byte("bytes_text"), []byte("sadasdasd")})
+    // Set value of []byte
+    serviceClient.Call("AddBytes", [2][]byte{[]byte("bytes_text"), []byte("abcdefghijklmnopqrstuvwxyz")})
     res, err = serviceClient.Call("GetBytes", "bytes_text")
     if err != nil {
         panic(err)
