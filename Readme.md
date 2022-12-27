@@ -53,28 +53,28 @@ func main() {
         }
         return str
     }()})
-    res, err := sc.Call("GetString", "string_text")
+    res, err := serviceClient.Call("GetString", "string_text")
     if err != nil {
         panic(err)
     }
     log.Println("GetString:", res)
 
     // Set int value
-    sc.Call("AddInt", [2]string{"count", "1"})
-    res, err = sc.Call("GetInt", "count")
+    serviceClient.Call("AddInt", [2]string{"count", "1"})
+    res, err = serviceClient.Call("GetInt", "count")
     if err != nil {
         panic(err)
     }
     log.Println("GetInt:", res)
 
     // set value of []byte
-    sc.Call("AddBytes", [2][]byte{[]byte("bytes_text"), []byte("sadasdasd")})
-    res, err = sc.Call("GetBytes", "bytes_text")
+    serviceClient.Call("AddBytes", [2][]byte{[]byte("bytes_text"), []byte("sadasdasd")})
+    res, err = serviceClient.Call("GetBytes", "bytes_text")
     if err != nil {
         panic(err)
     }
     log.Println("GetBytes:", string(res.([]byte)))
-    defer c.Stop()
+    defer client.Stop()
 }
 ```
 
